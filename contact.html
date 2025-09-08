@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Los Angeles Roleplay ER:LC — Contact & Resources</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+(function(){
+emailjs.init('YOUR_PUBLIC_KEY'); // Replace with your EmailJS public key
+})();
+</script>
+<style>
+.contact-section { max-width: 900px; margin: 3em auto; padding: 2em; background: #2b2d31; border-radius: 14px; box-shadow: 0 8px 30px rgba(0,0,0,0.6); }
+.contact-container { display: flex; flex-direction: column; gap: 2em; }
+@media(min-width: 768px){ .contact-container { flex-direction: row; } }
+.contact-form { flex: 1; display: flex; flex-direction: column; gap: 1em; }
+.contact-form input, .contact-form textarea { padding: 1em; border-radius: 10px; border: none; background: #1e1f22; color: #f2f3f5; font-size: 1em; }
+.contact-form button { align-self: flex-start; padding: 0.8em 1.5em; background: #5865F2; color: #fff; border-radius: 12px; border: none; font-weight: 600; cursor: pointer; transition: 0.3s; }
+.contact-form button:hover { background: #4752c4; }
+.contact-info { flex: 1; display: flex; flex-direction: column; gap: 1em; background: #1e1f22; padding: 1.5em; border-radius: 12px; }
+.contact-info a { color: #5865F2; text-decoration: none; }
+.contact-info a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<header class="site-header">
+<div class="logo">Los Angeles Roleplay ER:LC</div>
+<nav>
+<a href="index.html">Home</a>
+<a href="rules.html">Rules & Roles</a>
+<a href="channels.html">Channels & Bots</a>
+<a href="events.html">Events & Gallery</a>
+<a href="contact.html">Contact</a>
+</nav>
+<a class="btn small" href="https://discord.gg/3nhMTvBVse" target="_blank">Join Discord</a>
+</header>
+
+
+<main>
+<section class="hero">
+<h1>Contact & Resources</h1>
+<p class="lead">Reach out to us or find helpful links to get the best experience in Los Angeles Roleplay ER:LC.</p>
+</section>
+
+
+<section class="features contact-section">
+<h2>Contact Form</h2>
+<div class="contact-container">
+<form id="contact-form" class="contact-form">
+<input type="text" name="name" placeholder="Your Name" required>
+<input type="email" name="email" placeholder="Your Email" required>
+<textarea name="message" placeholder="Your Message" rows="6" required></textarea>
+<button type="submit">Send Message</button>
+</form>
+<div class="contact-info">
+<h3>Other Ways to Reach Us</h3>
+<p>Discord Invite: <a href="https://discord.gg/3nhMTvBVse" target="_blank">Join Here</a></p>
+<p>Official RP Rules PDF</p>
+<p>Staff Applications & Info</p>
+</div>
+</div>
+</section>
+</main>
+
+
+<footer>
+<p>© 2025 Los Angeles Roleplay ER:LC Server — All Rights Reserved</p>
+</footer>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+const form = document.getElementById('contact-form');
+if(form){
+form.addEventListener('submit', function(e){
+e.preventDefault();
+emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
+.then(() => {
+alert('Message sent successfully!');
+form.reset();
+}, (err) => {
+alert('Failed to send message. Please try again.');
+console.error(err);
+});
+});
+}
+});
+</script>
+</body>
+</html>

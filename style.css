@@ -1,0 +1,76 @@
+/* style.css */
+:root {
+--bg: #1e1f22;
+--bg-alt: #2b2d31;
+--text: #f2f3f5;
+--muted: #b0b3c0;
+--accent: #5865F2;
+--accent-hover: #4752c4;
+--radius: 12px;
+--maxw: 1200px;
+--shadow: 0 8px 30px rgba(0,0,0,0.6);
+}
+
+
+body {
+font-family: 'Inter', sans-serif;
+margin: 0;
+background: var(--bg);
+color: var(--text);
+line-height: 1.6;
+}
+
+
+.site-header {
+background: var(--bg-alt);
+padding: 1em 2em;
+display: flex;
+justify-content: space-between;
+align-items: center;
+position: sticky;
+top: 0;
+z-index: 1000;
+box-shadow: var(--shadow);
+}
+
+
+.logo { font-weight: 800; font-size: 1.6em; color: var(--accent); }
+nav a { color: var(--muted); margin: 0 1em; text-decoration: none; font-weight: 600; transition: 0.3s; }
+nav a:hover { color: var(--accent); }
+.btn { padding: 0.8em 1.5em; border-radius: var(--radius); background: var(--accent); color: #fff; text-decoration: none; font-weight: 600; box-shadow: var(--shadow); transition: 0.3s; display: inline-block; }
+.btn:hover { background: var(--accent-hover); transform: translateY(-2px); }
+.btn.small { padding: 0.5em 1em; font-size: 0.9em; }
+.pulse { animation: pulse 2s infinite; }
+
+
+@keyframes pulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+
+
+main { max-width: var(--maxw); margin: 3em auto; padding: 0 1.5em; }
+.hero { text-align: center; padding: 4em 2em; background: rgba(88,101,242,0.05); border-radius: var(--radius); box-shadow: var(--shadow); }
+.lead { color: var(--muted); font-size: 1.2em; margin-bottom: 2em; }
+.owners { display: flex; justify-content: center; gap: 1em; flex-wrap: wrap; margin-bottom: 2em; }
+.card { background: var(--bg-alt); padding: 1em 1.5em; border-radius: var(--radius); box-shadow: var(--shadow); }
+.features { margin-top: 4em; text-align: center; }
+.feature-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); gap: 1.5em; margin-top: 2em; }
+.feature-card { background: var(--bg-alt); padding: 2em; border-radius: var(--radius); box-shadow: var(--shadow); transition: transform 0.3s, box-shadow 0.3s; }
+.feature-card:hover { transform: translateY(-5px); box-shadow: 0 12px 40px rgba(0,0,0,0.7); }
+footer { background: var(--bg-alt); text-align: center; padding: 1.5em; color: var(--muted); margin-top: 3em; }
+
+
+/* script.js */
+document.addEventListener('DOMContentLoaded',()=>{
+const form=document.getElementById('contact-form');
+if(form){
+form.addEventListener('submit',e=>{
+e.preventDefault();
+alert('Demo: Message sent!');
+form.reset();
+});
+}
+form.addEventListener('submit', e => {
+    e.preventDefault();
+    alert('Your message has been sent!');
+    form.reset();
+});
+});
