@@ -72,5 +72,118 @@ form.addEventListener('submit', e => {
     e.preventDefault();
     alert('Your message has been sent!');
     form.reset();
+
+<style>
+nav a.active {
+color: #5865F2;
+font-weight: 700;
+border-bottom: 2px solid #5865F2;
+padding-bottom: 0.2em;
+}
+</style>
+
+<style>
+nav a.active {
+color: #5865F2;
+font-weight: 700;
+border-bottom: 2px solid #5865F2;
+padding-bottom: 0.2em;
+}
+</style>
+
+/* style.css additions for Departments page */
+
+
+/* Department Cards */
+.features { display: flex; flex-direction: column; gap: 2em; margin: 3em auto; max-width: 1200px; padding: 0 1em; }
+.card { background: #2b2d31; padding: 2em; border-radius: 14px; box-shadow: 0 8px 30px rgba(0,0,0,0.6); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.card:hover { transform: translateY(-5px); box-shadow: 0 12px 40px rgba(0,0,0,0.8); }
+.card h2 { font-size: 1.8em; margin-bottom: 0.5em; color: #fff; }
+.card p { color: #dcdde1; margin-bottom: 1em; line-height: 1.5; }
+.card ul { margin: 0 0 1.5em 1.5em; color: #c7c9cb; }
+.card li { margin-bottom: 0.5em; }
+.card .btn { display: inline-block; padding: 0.8em 1.5em; background: #5865F2; color: #fff; border-radius: 12px; text-decoration: none; font-weight: 600; transition: 0.3s; }
+.card .btn:hover { background: #4752c4; }
+.card .coming-soon { background: #4f545c; cursor: not-allowed; }
+
+
+/* Hero Section */
+.hero { text-align: center; padding: 3em 1em; background: #232428; }
+.hero h1 { font-size: 2.5em; margin-bottom: 0.5em; }
+.hero p { max-width: 800px; margin: 0 auto; color: #c7c9cb; line-height: 1.5; }
+
+
+/* Ensure responsive layout */
+@media(min-width: 768px) {
+.features { flex-direction: column; }
+
+/* Header Navigation */
+@media (max-width: 768px) {
+  header.site-header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1em;
+  }
+
+  header.site-header nav {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 1em 0;
+  }
+
+  header.site-header nav a {
+    padding: 0.5em 0;
+    border-bottom: 1px solid #2f3136;
+  }
+
+  header.site-header .btn.small {
+    align-self: center;
+    margin-top: 0.5em;
+  }
+}
+
+/* Hero Section */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 1.8em;
+  }
+
+  .hero p.lead {
+    font-size: 1em;
+    padding: 0 0.5em;
+  }
+}
+
+/* Features & Cards */
+@media (max-width: 768px) {
+  .features.grid {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card {
+    margin-bottom: 1.5em;
+    padding: 1.5em;
+  }
+
+  .card h2 {
+    font-size: 1.4em;
+  }
+
+  .card p, .card ul {
+    font-size: 0.95em;
+  }
+}
+
+/* Footer */
+@media (max-width: 768px) {
+  footer p {
+    font-size: 0.85em;
+    text-align: center;
+    padding: 1em;
+  }
+}
+}
 });
 });
